@@ -2,34 +2,149 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>index!</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="apple-mobile-web-app-capable" content="no" />
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" type="text/css" href="../css/style-index.css" />
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="modeName=750-12" name="grid" />
+    <link rel="stylesheet" type="text/css" href="../css/style-index.css" />
+    <script src="../js/jquery.scrollLoading.js"></script>
     <script src="../js/flexible/makegrid.debug.js"></script>
     <script src="../js/flexible/flexible_css.js"></script>
     <script src="../js/flexible/flexible.js"></script>
-    <script scr="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/zepto.js"></script>
     <script scr="../js/index.js"></script>
 </head>
 <body>
-<h1>Hello World!</h1>
-<div class="test">
-    <p>test</p>
-</div>
-<div class="test2">
-    test2
-</div>
-<div class="test3">
-    test3
+<script>
+$(document).ready(function(){
+    $(".imgLoad").scrollLoading({
+        container: $("#divMain"),
+        callback: function() {
+            //this.style.border = "3px solid #a0b3d6";
+        }
+    });
+
+    var imgNum = $(".imgLoad").length;//返回延迟加载图片数量
+    for (i = 0; i < imgNum; i++) {
+        var imgNew = new Image();
+        imgNew.src = $(".imgLoad").eq(i).attr("data-url");
+        //var set = setInterval(check,40);
+        // 加载完成获取宽高
+        imgNew.onload = function () {
+            $(".imgLoad").eq(i).css("backround-size:", imgNew.width);
+            //alert(imgNew.width);
+        };
+    }
+    alert(imgNum);
+});
+</script>
+<div id="divMain">
+    <div class="topBar">
+        <div class="iconLocation icon"></div>
+        <div class="siteName">
+            <h2>昆明</h2>
+        </div>
+        <div class="iconXia icon"></div>
+        <div class="searchBar"><p>点击这里搜索</p></div>
+        <div class="iconUser icon"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="links grid listBg">
+        <div class="col-3">
+            <a href="#" title="母婴护理">
+                <img class="imgLoad" src ="../img/linkA.png">
+            </a>
+            <p><a href="#" title="母婴护理">母婴护理</a></p>
+        </div>
+        <div class="col-3">
+            <a href="#" title="产后康复">
+                <img class="imgLoad" src ="../img/linkB.png">
+            </a>
+            <p><a href="#" title="产后康复">产后康复</a></p>
+        </div>
+        <div class="col-3">
+            <a href="#" title="母婴课堂">
+                <img class="imgLoad" src ="../img/linkC.png">
+            </a>
+            <p><a href="#" title="母婴课堂">母婴课堂</a></p>
+        </div>
+        <div class="col-3">
+            <a href="#" title="更多服务">
+                <img class="imgLoad" src ="../img/linkD.png">
+            </a>
+            <p><a href="#" title="更多服务">更多服务</a></p>
+        </div>
+    </div>
+    <div class="indexList grid listBg">
+        <div class="col-5">&nbsp;</div>
+        <div class="col-3"><div class="icon iconPptj"></div> <h3>品牌推荐</h3></div>
+        <div class="col-4">&nbsp;</div>
+        <div class="clear"></div>
+        <%for(var i=0;i<3;i++){%>
+        <div class="col-4 listSon">
+            <a href="#" title="品牌推荐" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+        </div>
+        <%}%>
+    </div>
+    <div class="indexList2 grid listBg">
+        <div class="col-5">&nbsp;</div>
+        <div class="col-3"><div class="icon iconMyhl"></div> <h3>母婴护理</h3></div>
+        <div class="col-4">&nbsp;</div>
+        <div class="clear"></div>
+        <%for(var i=0;i<4;i++){%>
+        <div class="col-6 listSon">
+            <a href="#" title="母婴护理" target="_blank"><img class="imgLoad" src ="../img/pic3.png" alt="母婴护理"></a>
+            <p><a href="母婴护理">母婴护理</a></p>
+        </div>
+        <%}%>
+    </div>
+    <div class="indexList grid listBg">
+        <div class="col-5">&nbsp;</div>
+        <div class="col-3"><div class="icon iconChkf"></div> <h3>产后康复</h3></div>
+        <div class="col-4">&nbsp;</div>
+        <div class="clear"></div>
+        <%for(var i=0;i<5;i++){%>
+        <div class="col-4 listSon">
+            <a href="#" title="产后康复" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <p><a href="产后康复">产后康复</a></p>
+        </div>
+        <%}%>
+        <div class="col-4 listSon more">查看更多</div>
+    </div>
+    <div class="indexList grid listBg">
+        <div class="col-5">&nbsp;</div>
+        <div class="col-3"><div class="icon iconMykt"></div> <h3>母婴课堂</h3></div>
+        <div class="col-4">&nbsp;</div>
+        <div class="clear"></div>
+        <%for(var i=0;i<5;i++){%>
+        <div class="col-4 listSon">
+            <a href="#" title="母婴课堂" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <p><a href="母婴课堂">母婴课堂</a></p>
+        </div>
+        <%}%>
+        <div class="col-4 listSon more">查看更多</div>
+    </div>
+    <div class="indexList grid listBg">
+        <div class="col-5">&nbsp;</div>
+        <div class="col-3"><div class="icon iconMysh"></div> <h3>母婴生活</h3></div>
+        <div class="col-4">&nbsp;</div>
+        <div class="clear"></div>
+        <%for(var i=0;i<2;i++){%>
+        <div class="col-4 listSon">
+            <a href="#" title="母婴生活" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <p><a href="母婴生活">母婴生活</a></p>
+        </div>
+        <%}%>
+        <div class="col-4 listSon more">查看更多</div>
+    </div>
 </div>
 <script>
-    $(".test2").css("background","green");
+
 </script>
 </body>
 </html>

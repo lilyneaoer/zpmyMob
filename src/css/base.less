@@ -1,0 +1,269 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 14px;
+  color:#666;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  background:#F8F8F8;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover{
+  color:@zpRed;
+}
+img {
+  //width: 100%;
+  //height: 100%;
+  display: block;
+  border: 0;
+}
+p{
+  margin:0;
+  padding:0;
+  line-height: 1;
+}
+input {
+  outline: 0px;
+  border:none;
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+ol, ul {
+  list-style: none;
+}
+h1,h2,h3,h4,h5,b{
+  font-weight: normal;
+}
+i{
+  font-style: normal;
+}
+.clear{
+  clear: both;
+}
+@lightGray:#EAE8E8;
+@xysRed:#D11D48;
+@zpRed:#FD6A88;
+@lightRed:#FDB9C7;
+@zpGray:#ECECEC;
+@zpBorder:#BFBFBF;
+//px转换为rem
+// 例如: .px2rem(height, 80);
+@baseFontSize: 75;//基于视觉稿横屏尺寸/100得出的基准font-size
+.p2r(@name,@px){
+    @{name}:@px/75*1rem;
+}
+.red{
+  border:1px solid red;
+}
+.hide{
+  display: none;
+}
+.green{
+  border:1px solid green;
+}
+/*雪碧图不平铺*/
+.nrp{
+  background-repeat: no-repeat;
+}
+.lineA{
+  width:1177px;
+  height:1px;
+  margin:5px 0 0 10px;
+  background: @zpRed;
+}
+.lineB{
+  width:100%;
+  height:1px;
+  background: #CCCCCC;
+}
+.icon{
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+h2{
+  font-size: 32/75rem;
+}
+p{
+  font-size: 26/75rem;
+}
+.listBg{
+  margin:0 0 20/75rem 0;
+  border-top:1px solid #DEDEDE;
+  border-bottom:1px solid #DEDEDE;
+  background: #FFF;
+}
+.topBar{
+  width:10rem;
+  height:84/75rem;
+  background: @zpRed;
+  position: fixed;
+  z-index: 999;
+  top:0;
+  .iconLocation{
+    width:25/75rem;
+    height:35/75rem;
+    float:left;
+    margin:25/75rem 17/75rem 0 22/75rem;
+    background-image: url("../slice/iconLocation.png");
+  }
+  .siteName{
+    float:left;
+    h2{
+      color: #FFF;
+      height:84/75rem;
+      line-height: 84/75rem;
+    }
+  }
+  .iconXia{
+    width:29/75rem;
+    height:15/75rem;
+    float:left;
+    margin:38/75rem 10/75rem 0 10/75rem;
+    background-image: url("../slice/iconXia.png");
+  }
+  .searchBar{
+    width:475/75rem;
+    height:50/75rem;
+    float:left;
+    text-indent: 20/75rem;
+    margin:18/75rem 0 0 5/75rem;
+    border-radius: 10/75rem;
+    background:@lightRed;
+    border:1px solid @zpRed;
+    p{
+      color:@zpRed;
+      height:50/75rem;
+      line-height: 50/75rem;
+    }
+  }
+  .iconUser{
+    width:36/75rem;
+    height:36/75rem;
+    float: right;
+    margin:22/75rem 22/75rem 0 0;
+    background-image: url("../slice/iconUser.png");
+  }
+  .grid{
+    div{
+      //border:1px solid green;
+    }
+  }
+}
+.links{
+  margin:104/75rem 0 20/75rem 0;
+  img{
+    width:121/75rem;
+    height:121/75rem;
+    margin:18/75rem auto 0 auto;
+  }
+  p{
+    margin:18/75rem 0;
+    text-align:center;
+    a{
+      color: @zpRed;
+    }
+  }
+}
+.indexList{
+  padding:15/75rem 0;
+  .icon{
+    width:30/75rem;
+    height:30/75rem;
+    margin:2/75rem 0 0 0;
+    float:left;
+  }
+  h3{
+    float:left;
+    font-size: 26/75rem;
+    color: @zpRed;
+    margin:0 0 0/75rem 10/75rem;
+  }
+  .listSon{
+    width:222/75rem;
+    height:222/75rem;
+    position: relative;
+    margin-top:15/75rem;
+    img{
+      width:222/75rem;
+      height:222/75rem;
+    }
+    p{
+      width:222/75rem;
+      padding:5/75rem 0;
+      position: absolute;
+      font-size: 22/75rem;
+      background: rgba(255,255,255,0.8);
+      text-align: center;
+      bottom:0;
+      a{
+        color:#666;
+      }
+    }
+  }
+  .more{
+    line-height: 222/75rem;
+    text-align: center;
+    border:1px solid #DFDFDF;
+    background: #F8F8F8;
+    font-size: 26/75rem;
+  }
+  .iconPptj{
+    background-image: url("../slice/iconPptj.png");
+  }
+  .iconChkf{
+    background-image: url("../slice/iconChkf.png");
+  }
+  .iconMykt{
+    background-image: url("../slice/iconMykt.png");
+  }
+  .iconMysh{
+    background-image:url("../slice/iconMysh.png");
+  }
+}
+.indexList2 {
+  padding: 15/75rem 0;
+  .icon {
+    width: 30/75rem;
+    height: 30/75rem;
+    margin: 2/75rem 0 0 0;
+    float: left;
+    background-image: url("../slice/iconMyhl.png");
+  }
+  h3 {
+    float: left;
+    font-size: 26/75rem;
+    color: @zpRed;
+    margin: 0 0 0/75rem 10/75rem;
+  }
+  .listSon {
+    width: 342/75rem;
+    height: 342/75rem;
+    position: relative;
+    margin-top: 15/75rem;
+    img {
+      width: 342/75rem;
+      height: 342/75rem;
+    }
+    p {
+      width: 342/75rem;
+      padding: 5/75rem 0;
+      position: absolute;
+      font-size: 22/75rem;
+      //background: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      top: 10/75rem;
+      a {
+        color: #666;
+      }
+    }
+  }
+}
+.testDiv{
+  height:3rem;
+  border:1px solid red;
+  text-align: center;
+}
