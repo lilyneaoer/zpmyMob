@@ -17,8 +17,8 @@ a:hover{
   color:@zpRed;
 }
 img {
-  //width: 100%;
-  //height: 100%;
+  width: 100%;
+  height: 100%;
   display: block;
   border: 0;
 }
@@ -87,6 +87,15 @@ i{
 h2{
   font-size: 32/75rem;
 }
+h3{
+  font-size: 30/75rem;
+}
+h4{
+  font-size: 28/75rem;
+}
+h5{
+  font-size: 28/75rem;
+}
 p{
   font-size: 26/75rem;
 }
@@ -95,6 +104,9 @@ p{
   border-top:1px solid #DEDEDE;
   border-bottom:1px solid #DEDEDE;
   background: #FFF;
+}
+#divMain{
+  width:10rem;
 }
 .topBar{
   width:10rem;
@@ -260,6 +272,85 @@ p{
         color: #666;
       }
     }
+  }
+}
+//底部样式
+.siteBtm{
+  .arcList{
+    margin:0 0 20/75rem 0;
+    padding:0 0 20/75rem 0;
+    border-bottom: 1px dashed #DBDBDB;
+    .icon{
+      width:31/75rem;
+      height:31/75rem;
+      float:left;
+      background-image: url("../img/baikeIcons.png");
+      background-size:cover;
+    }
+    h3{
+      float:left;
+      margin:0 0 0 10/75rem;
+      font-size: 26/75rem;
+    }
+    ul{
+      li{
+        margin:10/75rem 0 0 0;
+      }
+    }
+  }
+  .arcList:nth-child(2) .icon {
+    background-position: -42/75rem 0;
+  }
+
+  .arcList:nth-child(3) .icon {
+    background-position: -82/75rem 0;
+  }
+
+  .arcList:nth-child(4) .icon {
+    background-position: -122/75rem 0;
+  }
+
+  .arcList:nth-child(5) .icon {
+    background-position: -160/75rem 0;
+  }
+
+  .arcList:nth-child(6) .icon {
+    background-position: -200/75rem 0;
+  }
+  .btmKf{
+    img{
+      margin:0 auto;
+    }
+  }
+  h3{
+    color: @zpRed;
+    margin:0.5rem 0 10/75rem 0;
+  }
+  h5{
+    font-size: 22/75rem;
+  }
+  .erCode{
+    margin:15/75rem 0 0 0;
+    img{
+      //margin:0 auto;
+    }
+  }
+  .fLink{
+    margin:25/75rem 0 0 0;
+    ul{
+      li{
+        width:2rem;
+        margin:0 0 10/75rem 0;
+        float:left;
+      }
+    }
+  }
+}
+.siteRight{
+  margin:20/75rem 0;
+  text-align: center;
+  p{
+    line-height:1.5;
   }
 }
 .testDiv{

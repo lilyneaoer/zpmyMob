@@ -463,6 +463,8 @@ a:hover {
 }
 
 img {
+  width: 100%;
+  height: 100%;
   display: block;
   border: 0;
 }
@@ -541,6 +543,18 @@ h2 {
   font-size: 0.42666667rem;
 }
 
+h3 {
+  font-size: 0.4rem;
+}
+
+h4 {
+  font-size: 0.37333333rem;
+}
+
+h5 {
+  font-size: 0.37333333rem;
+}
+
 p {
   font-size: 0.34666667rem;
 }
@@ -550,6 +564,10 @@ p {
   border-top: 1px solid #DEDEDE;
   border-bottom: 1px solid #DEDEDE;
   background: #FFF;
+}
+
+#divMain {
+  width: 10rem;
 }
 
 .topBar {
@@ -741,6 +759,86 @@ p {
 
 .indexList2 .listSon p a {
   color: #666;
+}
+
+.siteBtm .arcList {
+  margin: 0 0 0.26666667rem 0;
+  padding: 0 0 0.26666667rem 0;
+  border-bottom: 1px dashed #DBDBDB;
+}
+
+.siteBtm .arcList .icon {
+  width: 0.41333333rem;
+  height: 0.41333333rem;
+  float: left;
+  background-image: url("../img/baikeIcons.png");
+  background-size: cover;
+}
+
+.siteBtm .arcList h3 {
+  float: left;
+  margin: 0 0 0 0.13333333rem;
+  font-size: 0.34666667rem;
+}
+
+.siteBtm .arcList ul li {
+  margin: 0.13333333rem 0 0 0;
+}
+
+.siteBtm .arcList:nth-child(2) .icon {
+  background-position: -0.56rem 0;
+}
+
+.siteBtm .arcList:nth-child(3) .icon {
+  background-position: -1.09333333rem 0;
+}
+
+.siteBtm .arcList:nth-child(4) .icon {
+  background-position: -1.62666667rem 0;
+}
+
+.siteBtm .arcList:nth-child(5) .icon {
+  background-position: -2.13333333rem 0;
+}
+
+.siteBtm .arcList:nth-child(6) .icon {
+  background-position: -2.66666667rem 0;
+}
+
+.siteBtm .btmKf img {
+  margin: 0 auto;
+}
+
+.siteBtm h3 {
+  color: #FD6A88;
+  margin: 0.5rem 0 0.13333333rem 0;
+}
+
+.siteBtm h5 {
+  font-size: 0.29333333rem;
+}
+
+.siteBtm .erCode {
+  margin: 0.2rem 0 0 0;
+}
+
+.siteBtm .fLink {
+  margin: 0.33333333rem 0 0 0;
+}
+
+.siteBtm .fLink ul li {
+  width: 2rem;
+  margin: 0 0 0.13333333rem 0;
+  float: left;
+}
+
+.siteRight {
+  margin: 0.26666667rem 0;
+  text-align: center;
+}
+
+.siteRight p {
+  line-height: 1.5;
 }
 
 .testDiv {
