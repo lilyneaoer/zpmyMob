@@ -20,26 +20,25 @@
 </head>
 <body>
 <script>
+//滚动加载图片
 $(function(){
-    var imgNum = $(".imgLoad").length;//返回延迟加载图片数量
-    var imgs=$("img");
-    var n=0;
-    lazyLoad();
-    $(window).scroll(lazyLoad);
-    function lazyLoad(event){
-        //alert(imgNum);
-        for (i = n; i < imgNum; i++) {
-            imgs.src =imgs.eq(i).attr("data-url");
-            //var set = setInterval(check,40);
-            // 加载完成获取宽高
-            imgNew.onload = function () {
-                //$(".imgLoad").eq(i).css("backround-size:", imgNew.width);
-                //alert(imgNew.width);
-            };
-            n=n+1;
+    var num = document.getElementsByTagName('img').length;
+    var img = document.getElementsByTagName("img");
+    var n = 0;
+    lazyload();
+    window.onscroll = lazyload;
+    function lazyload() {
+        var seeHeight = document.documentElement.clientHeight;
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        for (var i = n; i < num; i++) {
+            if (img[i].offsetTop < seeHeight + scrollTop) {
+                if (img[i].getAttribute("src") == "../img/roll.gif") {
+                    img[i].src = img[i].getAttribute("data-src");
+                }
+                n = i + 1;
+            }
         }
-
-    };
+    }
 });
 </script>
 <div id="divMain">
@@ -56,25 +55,25 @@ $(function(){
     <div class="links grid listBg">
         <div class="col-3">
             <a href="#" title="母婴护理">
-                <img class="imgLoad" src ="../img/linkA.png">
+                <img src="../img/roll.gif" data-src="../img/linkA.png">
             </a>
             <p><a href="#" title="母婴护理">母婴护理</a></p>
         </div>
         <div class="col-3">
             <a href="#" title="产后康复">
-                <img class="imgLoad" src ="../img/linkB.png">
+                <img src="../img/roll.gif" data-src="../img/linkB.png">
             </a>
             <p><a href="#" title="产后康复">产后康复</a></p>
         </div>
         <div class="col-3">
             <a href="#" title="母婴课堂">
-                <img class="imgLoad" src ="../img/linkC.png">
+                <img src="../img/roll.gif" data-src="../img/linkC.png">
             </a>
             <p><a href="#" title="母婴课堂">母婴课堂</a></p>
         </div>
         <div class="col-3">
             <a href="#" title="更多服务">
-                <img class="imgLoad" src ="../img/linkD.png">
+                <img src="../img/roll.gif" data-src="../img/linkD.png">
             </a>
             <p><a href="#" title="更多服务">更多服务</a></p>
         </div>
@@ -86,7 +85,7 @@ $(function(){
         <div class="clear"></div>
         <%for(var i=0;i<3;i++){%>
         <div class="col-4 listSon">
-            <a href="#" title="品牌推荐" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <a href="#" title="品牌推荐" target="_blank"><img src="../img/roll.gif" data-src="../img/pic4.png" alt="服务口称"></a>
         </div>
         <%}%>
     </div>
@@ -97,7 +96,7 @@ $(function(){
         <div class="clear"></div>
         <%for(var i=0;i<4;i++){%>
         <div class="col-6 listSon">
-            <a href="#" title="母婴护理" target="_blank"><img class="imgLoad" src ="../img/pic3.png" alt="母婴护理"></a>
+            <a href="#" title="母婴护理" target="_blank"><img src="../img/roll.gif" data-src="../img/pic3.png" alt="母婴护理"></a>
             <p><a href="母婴护理">母婴护理</a></p>
         </div>
         <%}%>
@@ -109,7 +108,7 @@ $(function(){
         <div class="clear"></div>
         <%for(var i=0;i<5;i++){%>
         <div class="col-4 listSon">
-            <a href="#" title="产后康复" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <a href="#" title="产后康复" target="_blank"><img src="../img/roll.gif" data-src="../img/pic4.png" alt="服务口称"></a>
             <p><a href="产后康复">产后康复</a></p>
         </div>
         <%}%>
@@ -122,7 +121,7 @@ $(function(){
         <div class="clear"></div>
         <%for(var i=0;i<5;i++){%>
         <div class="col-4 listSon">
-            <a href="#" title="母婴课堂" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <a href="#" title="母婴课堂" target="_blank"><img src="../img/roll.gif" data-src="../img/pic4.png" alt="服务口称"></a>
             <p><a href="母婴课堂">母婴课堂</a></p>
         </div>
         <%}%>
@@ -135,7 +134,7 @@ $(function(){
         <div class="clear"></div>
         <%for(var i=0;i<2;i++){%>
         <div class="col-4 listSon">
-            <a href="#" title="母婴生活" target="_blank"><img class="imgLoad" src ="../img/pic4.png" alt="服务口称"></a>
+            <a href="#" title="母婴生活" target="_blank"><img src="../img/roll.gif" data-src="../img/pic4.png" alt="服务口称"></a>
             <p><a href="母婴生活">母婴生活</a></p>
         </div>
         <%}%>
@@ -198,7 +197,7 @@ $(function(){
         </ul>
     </div>
     <div class="col-3 btmKf">
-        <img src="../img/picKf.png" alt="客服">
+        <img src="../img/roll.gif" data-src="../img/picKf.png" alt="客服">
     </div>
     <div class="col-9">
         <h3>24小时服务热线  400-6666-760</h3>
@@ -206,7 +205,7 @@ $(function(){
             云南省昆明市北京路402号（塘子巷）建设大厦19楼</h5>
     </div><div class="clear"></div>
     <div class="col-3 erCode">
-        <img src="../img/picERCode.png" alt=公众号二维码"">
+        <img src="../img/roll.gif" data-src="../img/picERCode.png" alt=公众号二维码"">
     </div>
     <div class="col-9 fLink">
         <ul>
