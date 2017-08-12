@@ -12,7 +12,6 @@
     <meta content="telephone=no,email=no" name="format-detection">
     <meta content="modeName=750-12" name="grid" />
     <link rel="stylesheet" type="text/css" href="../css/style-index.css" />
-    <script src="../js/jquery.scrollLoading.js"></script>
     <script src="../js/flexible/makegrid.debug.js"></script>
     <script src="../js/flexible/flexible_css.js"></script>
     <script src="../js/flexible/flexible.js"></script>
@@ -21,26 +20,26 @@
 </head>
 <body>
 <script>
-$(document).ready(function(){
-    $(".imgLoad").scrollLoading({
-        container: $("#divMain"),
-        callback: function() {
-            //this.style.border = "3px solid #a0b3d6";
-        }
-    });
-
+$(function(){
     var imgNum = $(".imgLoad").length;//返回延迟加载图片数量
-    for (i = 0; i < imgNum; i++) {
-        var imgNew = new Image();
-        imgNew.src = $(".imgLoad").eq(i).attr("data-url");
-        //var set = setInterval(check,40);
-        // 加载完成获取宽高
-        imgNew.onload = function () {
-            $(".imgLoad").eq(i).css("backround-size:", imgNew.width);
-            //alert(imgNew.width);
-        };
-    }
-    //alert(imgNum);
+    var imgs=$("img");
+    var n=0;
+    lazyLoad();
+    $(window).scroll(lazyLoad);
+    function lazyLoad(event){
+        //alert(imgNum);
+        for (i = n; i < imgNum; i++) {
+            imgs.src =imgs.eq(i).attr("data-url");
+            //var set = setInterval(check,40);
+            // 加载完成获取宽高
+            imgNew.onload = function () {
+                //$(".imgLoad").eq(i).css("backround-size:", imgNew.width);
+                //alert(imgNew.width);
+            };
+            n=n+1;
+        }
+
+    };
 });
 </script>
 <div id="divMain">
