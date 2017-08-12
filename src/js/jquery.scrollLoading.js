@@ -1,4 +1,3 @@
-if (/zhangxinxu|localhost/.test(location.href)==false) { alert('含外链JS资源，页面即将跳转...');location.href = "http://www.zhangxinxu.com/sp/welcome.php"; }
 /*!
  * jquery.scrollLoading.js
  * by zhangxinxu  http://www.zhangxinxu.com
