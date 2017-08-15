@@ -4,13 +4,14 @@
   padding: 0;
 }
 body {
-  font-size: 14px;
+  font-size: 12px;
   color:#666;
   font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
   background:#F8F8F8;
 }
 a {
   color: #666;
+  font-size: 24/75rem;
   text-decoration: none;
 }
 a:hover{
@@ -47,6 +48,7 @@ i{
 @lightGray:#EAE8E8;
 @xysRed:#D11D48;
 @zpRed:#FD6A88;
+@heavyRed:#E14363;
 @lightRed:#FDB9C7;
 @zpGray:#ECECEC;
 @zpBorder:#BFBFBF;
@@ -353,7 +355,97 @@ p{
     line-height:1.5;
   }
 }
+#divMain,.siteBtm,.siteRight{
+  //.hide;
+}
+.search{
+  .hide();
+  .iconCls{
+    width:35/75rem;
+    height:35/75rem;
+    float:left;
+    margin:25/75rem 17/75rem 0 22/75rem;
+    background-image: url("../slice/iconCls.png");
+  }
+  .searchTxt{
+    width:520/75rem;
+    height:50/75rem;
+    float:left;
+    text-indent: 20/75rem;
+    margin:18/75rem 0 0 5/75rem;
+    border-radius: 10/75rem;
+    border:1px solid @zpRed;
+    color:@zpRed;
+    height:50/75rem;
+    line-height: 50/75rem;
+    font-size: 28/75rem;
+    background: url("../img/iconSearch.png") no-repeat #FDB9C7 10/75rem center;
+    background-size: 36/75rem;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    @zpRed;
+  }
+  input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    @zpRed;
+  }
+  input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    @zpRed;
+  }
+  input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    @zpRed;
+  }
+  .searchBtn{
+    width:100/75rem;
+    height:50/75rem;
+    //padding: 0 0 0 100/75rem;
+    float: right;
+    color: #FFF;
+    text-align: center;
+    font-size: 28/75rem;
+    line-height: 50/75rem;
+    background:@heavyRed;
+    margin:18/75rem 26/75rem 0 0;
+    border: 1px solid @zpRed;
+    border-radius: 5px;
+  }
+  .hotKeys{
+    border-top:1px solid #DFDFDF;
+    border-bottom:1px solid #DFDFDF;
+    margin:104/75rem 0 20/75rem 0;
+    background: #FFF;
+  }
+  .col-3{
+    background: #F8F8F8;
+    border:1px solid #DFDFDF;
+    border-radius: 5px;
+    text-align: center;
+    margin:0 0 30/75rem 0;
+    padding:15/75rem 0;
+    font-size: 24/75rem;
+  }
+}
+.h3Title{
+  margin:25/75rem 0;
+  color: @zpRed;
+  font-size: 26/75rem;
+}
+.btmBtn{
+  width:10rem;
+  height:80/75rem;
+  background: @zpRed;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  line-height: 80/75rem;
+  letter-spacing: 15/75rem;
+  a{
+    color: #FFF;
+    font-size: 32/75rem;
+    text-align: center;
+  }
+}
 .testDiv{
+  width:10rem;
   height:3rem;
   border:1px solid red;
   text-align: center;

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>index!</title>
+    <title>index</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="apple-mobile-web-app-capable" content="no" />
@@ -39,19 +39,30 @@ $(function(){
             }
         }
     }
+    $(".searchBar").click(function(){
+        $("#divMain,.siteBtm,.siteRight").hide();
+        $(".search").show();
+    });
+    $("#searchCls,.iconCls").click(function(){
+        $(".search").hide();
+        $("#divMain,.siteBtm,.siteRight").show();
+    });
+    var fixHeight=$(window).height();
+    //$(".hotKeys").css("height",fixHeight);
 });
 </script>
+
 <div id="divMain">
     <div class="topBar">
-        <div class="iconLocation icon"></div>
-        <div class="siteName">
-            <h2>昆明</h2>
-        </div>
-        <div class="iconXia icon"></div>
-        <div class="searchBar"><p>点击这里搜索</p></div>
-        <div class="iconUser icon"></div>
-        <div class="clear"></div>
+    <div class="iconLocation icon"></div>
+    <div class="siteName">
+        <h2>昆明</h2>
     </div>
+    <div class="iconXia icon"></div>
+    <div class="searchBar"><p>点击这里搜索</p></div>
+    <div class="iconUser icon"></div>
+    <div class="clear"></div>
+</div>
     <div class="links grid listBg">
         <div class="col-3">
             <a href="#" title="母婴护理">
@@ -209,17 +220,12 @@ $(function(){
         <div class="col-4 listSon more">查看更多</div>
     </div>
 </div>
+<!--网站公共底-->
 <div class="siteBtm grid">
     <div class="col-6 arcList">
         <div class="icon"></div>
         <h3>母乳喂养</h3><div class="clear"></div>
         <ul>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
             
             <li><a href="#">一二三四五六七八九十一二三</a></li>
             
@@ -236,24 +242,12 @@ $(function(){
             
             <li><a href="#">一二三四五六七八九十一二三</a></li>
             
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
         </ul>
     </div>
     <div class="col-6 arcList">
         <div class="icon"></div>
         <h3>新生儿疾病</h3><div class="clear"></div>
         <ul>
-            
-            <li><a href="#">一二三四五六七八十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八十一二三</a></li>
             
             <li><a href="#">一二三四五六七八十一二三</a></li>
             
@@ -270,12 +264,6 @@ $(function(){
             
             <li><a href="#">一二三四五六七八九十一二三</a></li>
             
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
         </ul>
     </div>
     <div class="col-6 arcList">
@@ -287,24 +275,12 @@ $(function(){
             
             <li><a href="#">一二三四五六七八九十一二三</a></li>
             
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
         </ul>
     </div>
     <div class="col-6 arcList">
         <div class="icon"></div>
         <h3>哺乳期食谱</h3><div class="clear"></div>
         <ul>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
-            
-            <li><a href="#">一二三四五六七八九十一二三</a></li>
             
             <li><a href="#">一二三四五六七八九十一二三</a></li>
             
@@ -351,6 +327,66 @@ $(function(){
         网站备案号：滇ICP备14006171号<br>
         昆明疆恒科技有限公司版本所有
     </p>
+</div>
+<div class="search">
+    <div class="topBar grid">
+        <div class="iconCls icon"></div>
+        <input type="text" class="searchTxt" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月嫂">
+        <div class="searchBtn">搜索</div>
+        <div class="clear"></div>
+    </div>
+    <div class="hotKeys">
+
+        <div class="grid">
+            <div class="col-12">
+                <h3 class="h3Title">热门搜索</h3>
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+            <div class="col-3">
+                育婴师
+            </div>
+            
+        </div>
+    </div>
+    <div class="btmBtn" id="searchCls">
+        <a href="#">返回</a>
+    </div>
 </div>
 </body>
 </html>

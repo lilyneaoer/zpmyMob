@@ -1,0 +1,153 @@
+/* Import Less files */
+@import "lib-mixins";
+@import "lib-reset";
+@import "base";
+/* Import lib-rem.less if supportREM opened. */
+//@import "lib-rem";
+.listTop{
+  padding:25/75rem 0;
+  margin:84/75rem 0 20/75rem 0;
+  a{
+    padding:0 20/75rem 0 0;
+    font-size: 26/75rem;
+    color: #666;
+    background:url("../slice/iconSjGray.png") no-repeat right center;
+    background-size:14/75rem 12/75rem;
+  }
+  .selon{
+    color: @zpRed;
+    background:url("../slice/iconSj.png") no-repeat right center;
+    background-size:14/75rem 12/75rem;
+  }
+  .filter{
+    padding:0 50/75rem 0 0 ;
+    background:url("../slice/iconSx.png") no-repeat right center;
+    background-size: contain;
+  }
+}
+.ysList{
+  img{
+    width:222/75rem;
+    height:222/75rem;
+    border:1px solid #ECECEC;
+  }
+  ul{
+    li{
+      width: 10rem;
+      padding:10/75rem 0;
+      font-size: 22/75rem;
+      color: #666;
+      b{
+        color: @zpRed;
+      }
+      .ysName{
+        font-size:24/75rem;
+        float: left;
+        color: #000;
+        margin:10/75rem 15/75rem 0 0;
+      }
+      .ysPrice{
+        float:left;
+        margin:7/75rem 0 0 0;
+        b{
+          font-size: 28/75rem;
+        }
+      }
+      .ysIntro{
+        margin:10/75rem 0 0 0;
+        line-height: 1.5;
+        span{
+          margin:0 5/75rem 0 0;
+        }
+      }
+      .ysPj{
+        margin:10/75rem 0 0 0;
+        span{
+          float:left;
+          padding:5/75rem;
+          margin:0 15/75rem 10/75rem 0;
+          background: #F8F8F8;
+          border:1px solid #D2D2D2;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+.ysFilter{
+  width:10rem;
+  background:rgba(0,0,0,0.6);
+  z-index: 999;
+  position: fixed;
+  top:0;
+  .hide();
+  .inner{
+    width:9rem;
+    background: #F8F8F8;
+    margin:0 0 0 1rem;
+    position: relative;
+    .listBg{
+      padding:0.5rem 0.5rem;
+      h3{
+        float:left;
+        font-size: 28/75rem;
+      }
+      a{
+        float:left;
+        width:160/75rem;
+        padding:10/75rem 0;
+        text-align: center;
+        font-size: 26/75rem;
+        margin:20/75rem 40/75rem 0 0;
+        background: #F8F8F8;
+        border:1px solid #DEDEDE;
+        border-radius: 5px;
+      }
+      .sel{
+        color: @zpRed;
+        background: #FFF;
+        border:1px solid @zpRed;
+      }
+      .icon{
+        float:left;
+        width:33/75rem;
+        height:33/75rem;
+        margin:0 15/75rem 0 0;
+      }
+      .iconPrice{
+        background-image:url("../slice/iconPrice.png");
+      }
+      .iconExp{
+        background-image:url("../slice/iconExp.png");
+      }
+      .iconYears{
+        background-image:url("../slice/iconYears.png");
+      }
+      .iconWhere{
+        background-image:url("../slice/iconWhere.png");
+      }
+    }
+  }
+  .btnReset,.btnOK{
+    width:4.5rem;
+    height:1rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    line-height: 1rem;
+    font-size: 32/75rem;
+    letter-spacing: 1em;
+  }
+  .btnReset{
+    left:0;
+    background: #F8F8F8;
+    border-top:1px solid #DFDFDF;
+  }
+  .btnOK{
+    color: #FFF;
+    background: @zpRed;
+    border-top:1px solid @zpRed;
+    right:0;
+  }
+}

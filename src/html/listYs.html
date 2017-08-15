@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>listYs</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="modeName=750-12" name="grid"/>
+    <link rel="stylesheet" type="text/css" href="../css/style-list.css"/>
+    <script src="../js/flexible/makegrid.debug.js"></script>
+    <script src="../js/flexible/flexible_css.js"></script>
+    <script src="../js/flexible/flexible.js"></script>
+    <script src="../js/zepto.js"></script>
+    <script src="../js/drag-loading.js"></script>
+    <script scr="../js/index.js"></script>
+</head>
+<body>
+<script>
+    //滚动加载图片
+    $(function () {
+        var num = document.getElementsByTagName('img').length;
+        var img = document.getElementsByTagName("img");
+        var numYs=document.getElementsByClassName("ysChid").length;
+       //var ys=document.getElementsByClassName("ysBlock");
+        var n = 0;
+        var m=5;
+        lazyload();
+        window.onscroll = lazyload;
+        function lazyload() {
+            var seeHeight = document.documentElement.clientHeight;
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            for (var i = n; i < num; i++) {
+                if (img[i].offsetTop < seeHeight + scrollTop) {
+                    if (img[i].getAttribute("src") == "../img/roll.gif") {
+                        img[i].src = img[i].getAttribute("data-src");
+                    }
+                    n = i + 1;
+                }
+            }
+            //$("#ysBlock li").eq(1).hide();
+            for(var j=m;j<numYs;j++){
+                //alert(j);
+                $("#ysBlock li").eq(j).hide();
+                //$(ys[i]).hide();
+                var ysSee=$("#ysBlock li").eq(j).offsetTop;
+                if (ysSee<seeHeight) {
+                    alert("test");
+                    //$("#ysBlock li").eq(j).show();
+                }
+
+            }
+        }
+        $(".searchBar").click(function () {
+            $("#divMain,.siteBtm,.siteRight").hide();
+            $(".search").show();
+        });
+        $("#searchCls,.iconCls").click(function () {
+            $(".search").hide();
+            $("#divMain,.siteBtm,.siteRight").show();
+        });
+        var fixHeight = $(window).height();
+        $(".ysFilter,.inner").css("height",fixHeight);
+        $(".btnOK").click(function(){
+            $(".ysFilter").hide();
+        });
+        $(".filter").click(function(){
+            $(".ysFilter").show();
+        });
+
+    });
+</script>
+
+<div id="divMain">
+    <% include pageTop.html %>
+    <div class="listTop listBg grid">
+        <div class="col-2">
+            <a href="#" title="综合" class="selon">综合</a>
+        </div>
+        <div class="col-2">
+            <a href="#" title="预约数">预约数</a>
+        </div>
+        <div class="col-2">
+            <a href="#" title="经验">经验</a>
+        </div>
+        <div class="col-2">
+            <a href="#" title="价格">价格</a>
+        </div>
+        <div class="col-2">
+            <a href="#" title="年龄">年龄</a>
+        </div>
+        <div class="col-2">
+            <a class="filter" href="#" title="筛选">筛选</a>
+        </div>
+    </div>
+    <div class="ysList grid">
+        <ul id="ysBlock">
+            <%for(var i=0;i<60;i++){%>
+            <li class="listBg ysChid">
+                <div class="col-4">
+                    <a href="#" title="张阿姨">
+                        <img src="../img/pic5.png" alt="月嫂照片">
+                    </a>
+                </div>
+                <div class="col-8">
+                    <div class="ysName">
+                        张阿姨<%-i %>
+                    </div>
+                    <div class="ysPrice">
+                        ￥<b>6666</b> 元/月
+                    </div>
+                    <div class="clear"></div>
+                    <div class="ysIntro">
+                        服务经验： <b>5</b> 年 <b>66</b> 户<br>
+                        <span>籍贯：云南昆明</span>
+                        <span>35岁</span>
+                        <span>汉族</span>
+                        <span>高中</span>
+                        <span>属虎</span>
+                    </div>
+                    <div class="ysPj">
+                        <span>形像谈吐好</span>
+                        <span>形像谈吐好</span>
+                        <span>经验丰富</span>
+                        <span>月子餐做得好</span>
+                        <span>热情直爽</span>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <%}%>
+        </ul>
+    </div>
+    <div class="ysFilter">
+        <div class="inner">
+            <div class="listBg">
+                <div class="icon iconPrice"></div>
+                <h3>
+                    价格
+                </h3><div class="clear"></div>
+                 <a href="#" class="sel">不限</a>
+                 <a href="#">1000</a> 
+                 <a href="#">2000</a> 
+                 <a href="#">3000</a> 
+                 <a href="#">4000</a> 
+                 <a href="#">5000以上</a> <div class="clear"></div>
+            </div>
+            <div class="listBg">
+                <div class="icon iconExp"></div>
+                <h3>
+                    经验
+                </h3><div class="clear"></div>
+                <a href="#" class="sel">不限</a>
+                <a href="#">1年以内</a>
+                <a href="#">2~3年</a>
+                <a href="#">3~4年</a>
+                <a href="#">4年以上</a>
+                 <div class="clear"></div>
+            </div>
+            <div class="listBg">
+                <div class="icon iconYears"></div>
+                <h3>
+                    年龄
+                </h3><div class="clear"></div>
+                <a href="#" class="sel">不限</a>
+                <a href="#">30岁以下</a>
+                <a href="#">30~40岁</a>
+                <a href="#">40~50岁</a>
+                <a href="#">50岁以上</a>
+                 <div class="clear"></div>
+            </div><div class="listBg">
+            <div class="icon iconWhere"></div>
+            <h3>
+                籍贯
+            </h3><div class="clear"></div>
+            <a href="#" class="sel">不限</a>
+            <a href="#">昆明</a>
+            <a href="#">曲靖</a>
+            <a href="#">红河</a>
+            <a href="#">景洪</a>
+            <a href="#">其它</a> <div class="clear"></div>
+            </div>
+            <a href="#" class="btnReset">重置</a>
+            <a href="#" class="btnOK">确定</a>
+        </div>
+    </div>
+</div>
+<div class="btmBtn" id="backBtn">
+    <a href="index.html">返回</a>
+</div>
+<!--网站公共底-->
+<% include pageBottom.html %>
+</body>
+</html>
