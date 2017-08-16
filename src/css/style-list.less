@@ -25,6 +25,7 @@
     background-size: contain;
   }
 }
+//月嫂列表
 .ysList{
   img{
     width:222/75rem;
@@ -73,6 +74,18 @@
       }
     }
   }
+}
+.bottom-line{
+  width:3rem;
+  padding:0.2rem 0;
+  position: fixed;
+  left:50%;
+  margin-left: -1.5rem;
+  bottom:1.5rem;
+  color: #FFF;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  .hide;
 }
 .ysFilter{
   width:10rem;
@@ -149,5 +162,57 @@
     background: @zpRed;
     border-top:1px solid @zpRed;
     right:0;
+  }
+}
+//商品列表
+.goodsList{
+  margin:104/75rem 0 20/75rem 0;
+  img{
+    width:222/75rem;
+    height:222/75rem;
+    border:1px solid #ECECEC;
+  }
+  ul{
+    li{
+      width: 10rem;
+      padding:10/75rem 0;
+      font-size: 22/75rem;
+      color: #666;
+      b{
+        color: @zpRed;
+      }
+      .goodsName{
+        font-size:24/75rem;
+        float: left;
+        color: #000;
+        margin:10/75rem 15/75rem 0 0;
+      }
+      .goodsPrice{
+        float:right;
+        margin:7/75rem 0 0 0;
+        b{
+          font-size: 28/75rem;
+        }
+      }
+      .goodsIntro{
+        margin:10/75rem 0 0 0;
+        line-height: 1.5;
+      }
+      .goodsAdd{
+        margin:10/75rem 0 0 0;
+        color: #888;
+      }
+      .arcType{
+        margin:10/75rem 0 0 0;
+        span{
+          float:left;
+          padding:5/75rem;
+          margin:0 15/75rem 10/75rem 0;
+          background: #F8F8F8;
+          border:1px solid #D2D2D2;
+          border-radius: 5px;
+        }
+      }
+    }
   }
 }

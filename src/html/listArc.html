@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>listYs</title>
+    <title>listArc</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="apple-mobile-web-app-capable" content="no"/>
@@ -16,64 +16,92 @@
     <script src="../js/flexible/flexible_css.js"></script>
     <script src="../js/flexible/flexible.js"></script>
     <script src="../js/zepto.js"></script>
-    <script src="../js/iscroll.js"></script>
+    <script src="../js/drag-loading.js"></script>
     <script scr="../js/index.js"></script>
 </head>
 <body>
+<script>
+    //滚动加载图片
+    $(function () {
+        var num = document.getElementsByTagName('img').length;
+        var img = document.getElementsByTagName("img");
+        var numYs=document.getElementsByClassName("ysChid").length;
+       //var ys=document.getElementsByClassName("ysBlock");
+        var n = 0;
+        var m=5;
+        lazyload();
+        window.onscroll = lazyload;
+        function lazyload() {
+            var seeHeight = document.documentElement.clientHeight;
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            for (var i = n; i < num; i++) {
+                if (img[i].offsetTop < seeHeight + scrollTop) {
+                    if (img[i].getAttribute("src") == "../img/roll.gif") {
+                        img[i].src = img[i].getAttribute("data-src");
+                    }
+                    n = i + 1;
+                }
+            }
+            //$("#ysBlock li").eq(1).hide();
+            for(var j=m;j<numYs;j++){
+                //alert(j);
+                $("#ysBlock li").eq(j).hide();
+                //$(ys[i]).hide();
+                var ysSee=$("#ysBlock li").eq(j).offsetTop;
+                if (ysSee<seeHeight) {
+                    //$("#ysBlock li").eq(j).show();
+                }
+
+            }
+        }
+        $(".searchBar").click(function () {
+            $("#divMain,.siteBtm,.siteRight").hide();
+            $(".search").show();
+        });
+        $("#searchCls,.iconCls").click(function () {
+            $(".search").hide();
+            $("#divMain,.siteBtm,.siteRight").show();
+        });
+        var fixHeight = $(window).height();
+        $(".ysFilter,.inner").css("height",fixHeight);
+        $(".btnOK").click(function(){
+            $(".ysFilter").hide();
+        });
+        $(".filter").click(function(){
+            $(".ysFilter").show();
+        });
+        $(".goodsList ul li").click(function(){
+            var goodsLink=$(this).attr("data-link");
+            window.location.href='contentGoods.html='+goodsLink;
+        });
+    });
+</script>
 
 <div id="divMain">
     <% include pageTop.html %>
-    <div class="listTop listBg grid">
-        <div class="col-2">
-            <a href="#" title="综合" class="selon">综合</a>
-        </div>
-        <div class="col-2">
-            <a href="#" title="预约数">预约数</a>
-        </div>
-        <div class="col-2">
-            <a href="#" title="经验">经验</a>
-        </div>
-        <div class="col-2">
-            <a href="#" title="价格">价格</a>
-        </div>
-        <div class="col-2">
-            <a href="#" title="年龄">年龄</a>
-        </div>
-        <div class="col-2">
-            <a class="filter" href="#" title="筛选">筛选</a>
-        </div>
-    </div>
-    <div class="ysList grid">
-        <ul id="ysBlock">
-            <%for(var i=1;i<11;i++){%>
-            <li class="listBg ysChid">
+    <div class="goodsList grid">
+        <ul>
+            <%for(var i=0;i<11;i++){%>
+            <li class="listBg" data-link=<%-i %>>
                 <div class="col-4">
                     <a href="#" title="张阿姨">
                         <img src="../img/pic5.png" alt="月嫂照片">
                     </a>
                 </div>
                 <div class="col-8">
-                    <div class="ysName">
-                        张阿姨<%-i %>
-                    </div>
-                    <div class="ysPrice">
-                        ￥<b>6666</b> 元/月
+                    <div class="goodsName">
+                        小儿辅食添加的最佳时间<%-i %>
                     </div>
                     <div class="clear"></div>
-                    <div class="ysIntro">
-                        服务经验： <b>5</b> 年 <b>66</b> 户<br>
-                        <span>籍贯：云南昆明</span>
-                        <span>35岁</span>
-                        <span>汉族</span>
-                        <span>高中</span>
-                        <span>属虎</span>
+                    <div class="goodsIntro">
+                        <p>
+                            母乳喂养满4-6个月间为小儿辅食添加的最佳小儿辅食添加的最佳时间!时间!而宝宝迈向吃大人食物...
+                        </p>
                     </div>
-                    <div class="ysPj">
-                        <span>形像谈吐好</span>
-                        <span>形像谈吐好</span>
-                        <span>经验丰富</span>
-                        <span>月子餐做得好</span>
-                        <span>热情直爽</span>
+                    <div class="arcType">
+                        <p>
+                            <span>新生儿护理</span>
+                        </p>
                     </div>
                 </div>
                 <div class="clear"></div>
@@ -81,7 +109,6 @@
             <%}%>
         </ul>
     </div>
-    <!--月嫂筛选框-->
     <div class="ysFilter">
         <div class="inner">
             <div class="listBg">
@@ -134,10 +161,6 @@
             <a href="#" class="btnReset">重置</a>
             <a href="#" class="btnOK">确定</a>
         </div>
-    </div>
-    <!--加载月嫂时的提示-->
-    <div class="bottom-line">
-        <p>正在刷新</p>
     </div>
 </div>
 <div class="btmBtn" id="backBtn">

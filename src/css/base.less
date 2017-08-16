@@ -26,7 +26,7 @@ img {
 p{
   margin:0;
   padding:0;
-  line-height: 1;
+  line-height: 1.5;
 }
 input {
   outline: 0px;
@@ -371,7 +371,8 @@ p{
     width:520/75rem;
     height:50/75rem;
     float:left;
-    text-indent: 20/75rem;
+    text-align: center;
+    //text-indent: 20/75rem;
     margin:18/75rem 0 0 5/75rem;
     border-radius: 10/75rem;
     border:1px solid @zpRed;
@@ -379,20 +380,24 @@ p{
     height:50/75rem;
     line-height: 50/75rem;
     font-size: 28/75rem;
-    background: url("../img/iconSearch.png") no-repeat #FDB9C7 10/75rem center;
+    background: url("../img/iconSearch.png") no-repeat #FDB9C7 160/75rem center;
     background-size: 36/75rem;
   }
   input::-webkit-input-placeholder { /* WebKit browsers */
-    color:    @zpRed;
+    color:@zpRed;
+    text-align: center;
   }
   input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    @zpRed;
+    color:@zpRed;
+    text-align: center;
   }
   input::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    @zpRed;
+    color:@zpRed;
+    text-align: center;
   }
   input:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    @zpRed;
+    color:@zpRed;
+    text-align: center;
   }
   .searchBtn{
     width:100/75rem;
@@ -428,6 +433,79 @@ p{
   margin:25/75rem 0;
   color: @zpRed;
   font-size: 26/75rem;
+}
+//用户登录
+.login{
+  width:10rem;
+  position: absolute;
+  top:84/75rem;
+  z-index: 99999;
+  background: #F8F8F8;
+  .hide;
+  h3{
+    font-size: 32/75rem;
+    text-align: center;
+    margin: 4rem 0 0 0;
+  }
+  .box{
+    margin:0.6rem 0 0 0;
+    height:64/75rem;
+    border:1px solid #EBEBEB;
+    border-radius: 5px;
+    background: #FFF;
+  }
+  .icon{
+    width:45/75rem;
+    height:45/75rem;
+    float:left;
+    margin:10/75rem 0 0 10/75rem;
+  }
+  .iconSjhm{
+    background-image:url("../slice/iconPhone.png");
+  }
+  .icon123{
+    background-image:url("../slice/icon123.png");
+  }
+  .iconPwd{
+    background-image:url("../slice/iconPwd.png");
+  }
+  .uPhone,.u123,.uCode{
+    height:64/75rem;
+    padding:0 0 0 10/75rem;
+    line-height: 64/75rem;
+    float:left;
+  }
+  .uPhone{
+
+  }
+  .u123{
+    width:120/75rem;
+  }
+  img{
+    float:right;
+    width:160/75rem;
+    height:64/75rem;
+  }
+  .uCode{
+    width:120/75rem;
+  }
+  .getCode{
+    float:right;
+    width:160/75rem;
+    height:64/75rem;
+    background: #EBE9E9;
+  }
+  .loginBtn{
+    width:3rem;
+    height:52/75rem;
+    background: @zpRed;
+    border:1px solid @zpRed;
+    border-radius: 5px;
+    color: #FFF;
+    margin:0.6rem 0 0 0;
+    text-align: center;
+    line-height: 52/75rem;
+  }
 }
 .btmBtn{
   width:10rem;

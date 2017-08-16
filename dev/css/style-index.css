@@ -473,7 +473,7 @@ img {
 p {
   margin: 0;
   padding: 0;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 input {
@@ -857,7 +857,7 @@ p {
 .search .searchTxt {
   width: 6.93333333rem;
   float: left;
-  text-indent: 0.26666667rem;
+  text-align: center;
   margin: 0.24rem 0 0 0.06666667rem;
   border-radius: 0.13333333rem;
   border: 1px solid #FD6A88;
@@ -865,28 +865,32 @@ p {
   height: 0.66666667rem;
   line-height: 0.66666667rem;
   font-size: 0.37333333rem;
-  background: url("../img/iconSearch.png") no-repeat #FDB9C7 0.13333333rem center;
+  background: url("../img/iconSearch.png") no-repeat #FDB9C7 2.13333333rem center;
   background-size: 0.48rem;
 }
 
 .search input::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #FD6A88;
+  text-align: center;
 }
 
 .search input:-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: #FD6A88;
+  text-align: center;
 }
 
 .search input::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: #FD6A88;
+  text-align: center;
 }
 
 .search input:-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: #FD6A88;
+  text-align: center;
 }
 
 .search .searchBtn {
@@ -924,6 +928,90 @@ p {
   margin: 0.33333333rem 0;
   color: #FD6A88;
   font-size: 0.34666667rem;
+}
+
+.login {
+  width: 10rem;
+  position: absolute;
+  top: 1.12rem;
+  z-index: 99999;
+  background: #F8F8F8;
+  display: none;
+}
+
+.login h3 {
+  font-size: 0.42666667rem;
+  text-align: center;
+  margin: 4rem 0 0 0;
+}
+
+.login .box {
+  margin: 0.6rem 0 0 0;
+  height: 0.85333333rem;
+  border: 1px solid #EBEBEB;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+.login .icon {
+  width: 0.6rem;
+  height: 0.6rem;
+  float: left;
+  margin: 0.13333333rem 0 0 0.13333333rem;
+}
+
+.login .iconSjhm {
+  background-image: url("../slice/iconPhone.png");
+}
+
+.login .icon123 {
+  background-image: url("../slice/icon123.png");
+}
+
+.login .iconPwd {
+  background-image: url("../slice/iconPwd.png");
+}
+
+.login .uPhone,
+.login .u123,
+.login .uCode {
+  height: 0.85333333rem;
+  padding: 0 0 0 0.13333333rem;
+  line-height: 0.85333333rem;
+  float: left;
+}
+
+.login .u123 {
+  width: 1.6rem;
+}
+
+.login img {
+  float: right;
+  width: 2.13333333rem;
+  height: 0.85333333rem;
+}
+
+.login .uCode {
+  width: 1.6rem;
+}
+
+.login .getCode {
+  float: right;
+  width: 2.13333333rem;
+  height: 0.85333333rem;
+  background: #EBE9E9;
+}
+
+.login .loginBtn {
+  width: 3rem;
+  height: 0.69333333rem;
+  background: #FD6A88;
+  border: 1px solid #FD6A88;
+  border-radius: 5px;
+  color: #FFF;
+  margin: 0.6rem 0 0 0;
+  text-align: center;
+  line-height: 0.69333333rem;
 }
 
 .btmBtn {
